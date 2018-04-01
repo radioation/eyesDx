@@ -36,19 +36,19 @@ namespace SampleNetworkSource
 
                 // Add 'AnIntegerField' to the network adapter message
                 int someInt = counter * 2;
-                msg += "," + someInt.ToString();
+                msg += "," + someInt;
 
                 // Add 'SomeFloatField' to the network adapter message
                 float cosAngle = (float)Math.Cos(time);
-                msg += "," + cosAngle.ToString();
+                msg += "," + cosAngle;
 
                 // Add 'SomeDoubleField' to the network adapter message
                 double sinAngle = Math.Sin(time);
-                msg += "," + sinAngle.ToString();
+                msg += "," + sinAngle;
 
                 // Add 'Some64BitIntField' to the network adapter message
                 var max64 = Int64.MaxValue -counter;
-                msg += "," + max64.ToString();
+                msg += "," + max64;
                   
                 // send the message out to the network adapter
                 byte[] toBytes = Encoding.ASCII.GetBytes(msg);
