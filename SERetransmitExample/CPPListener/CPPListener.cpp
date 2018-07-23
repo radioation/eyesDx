@@ -104,6 +104,8 @@ int main()
 	closesocket(s);
 
 	WSACleanup();
+#else
+	close(s);
 #endif
 
 	return 0;
