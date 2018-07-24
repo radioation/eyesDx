@@ -25,3 +25,11 @@ To use this example
 4. Build and run either "CPPListner" or "SERetransmitExample" on the same machine as the SmartEye Adapter.   
 
 
+### Retransmission Configuration
+
+The retransmit 
+
+
+
+### Linux
+The CPPListener.cpp file has been compiled and tested on Ubuntu Linux 16.04.1 with g++ version 5.4.0.
