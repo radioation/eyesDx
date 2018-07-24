@@ -64,6 +64,7 @@
     <address>192.168.1.147</address>
     <port>51500</port>
     <fields>ObjectIntersectionX,ObjectIntersectionY,ObjectIntersectionName,LeftEyelidOpening,RightEyelidOpening,EyelidOpening</fields>
+    <sleep>1</sleep>
     <mode>binary</mode>
   </retransmit>
 

@@ -64,6 +64,7 @@
     <address>127.0.0.1</address>
     <port>51500</port>
     <fields>ObjectIntersectionX,ObjectIntersectionY,ObjectIntersectionName</fields>
+		<sleep>10</sleep>
     <mode>binary</mode>
   </retransmit>
 
