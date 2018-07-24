@@ -33,7 +33,7 @@ The retransmission function can be configured using the `<retransmit>` elements 
     <address>127.0.0.1</address>
     <port>51500</port>
     <fields>ObjectIntersectionX,ObjectIntersectionY,ObjectIntersectionName</fields>
-		<sleep>10</sleep>
+    <sleep>10</sleep>
     <mode>binary</mode>
   </retransmit>
 ```
@@ -44,7 +44,17 @@ Use `<sleep>` to control how long the adapter waits (in ms) if no data is presen
 
 
 ### Data format
+The adapter currently sends data in binary form.  The first 8 bytes will be a Windows Filetime.   The rest of the bytes will depend on the fields selected.   Most of the data fields are 32-bit floats.  Text strings are 64-bytes long.   
 
+The `fields` example 
+```
+    <fields>ObjectIntersectionX,ObjectIntersectionY,ObjectIntersectionName</fields>
+```
+results in
+* first 8 bytes as the UTC time. 
+* The next 4 bytes are the ObjectIntersectionX
+* The next 4 bytes are the ObjectIntersectionY
+* the next 64 bytes are the ObjectIntersctionName
 
 ### Linux
-The CPPListener.cpp file has been compiled and tested on Ubuntu Linux 16.04.1 with g++ version 5.4.0.
+The CPPListener.cpp file has been compiled and tested on Ubuntu Linux 16.04.1 with g++ version 5.4.0.  It can be compiled by typing `g++ CPPListener.cpp`.
