@@ -1,0 +1,71 @@
+<!--****************************************************************************
+    This is a predefined input source for Adapter Launcher.
+
+    This file provides default values for listening to a single subject
+    SEP eye tracking session.
+   
+    For more information about the fields contained, please visit
+    http://eyesdx.com/client/userguide/apps/adapters/smarteye.html.
+   
+    Documentation last updated April 19, 2016.
+*****************************************************************************-->
+
+<root>
+ 
+
+  <!-- Path where log files will be cached during a recording. -->
+  <log_path>C:\eDx_data\adapter_logs\smarteye_logs\</log_path>
+
+  <!-- Searchable phrases for discovering this service, comma delimitted. -->
+  <search_phrases>smarteye,eye,tracking,sep</search_phrases>
+  
+  <!-- Description for this service. -->
+  <description>The SmartEye adapter listens to eye tracking data from SEP.</description>
+  
+  <!-- Adapter type detection for adapter runner. -->
+  <adapter_type>smarteye</adapter_type>
+	
+  <!-- Change this field ONLY if you are running multiple simultaneous SEP eye 
+       trackers. Each device must have a unique index. Set the first device
+       to 0, the next device to 1, ... If you have only one SEP eye tracker,
+       leave this field as 0. -->
+  <multi_device_index>0</multi_device_index>
+  
+  <!-- Stream data live to MAPPS. -->
+  <export_to_mapps>true</export_to_mapps>
+
+  <!-- Ignore the timestamps from the remote machine and use the time
+       that the packet was received instead. -->
+  <force_local_timestamps>true</force_local_timestamps>
+
+  <!-- UDP port that Smart Eye is transmitting data. -->
+  <smarteye_udp_port>5001</smarteye_udp_port>
+  
+  <!-- Name that should be used for the bus. This name must be unique. -->
+  <name>Subject_1</name>
+  
+  <!-- What fields should be loaded. Add a comma delimitted list here, or
+       leave the field empty to load all fields. -->
+  <fields></fields>
+  
+  <!-- Map world object for live mode. Provide a comma delimitted list of
+       the SEP object name for each dynamic screen. -->
+  <world_objects>desktop-1</world_objects>
+
+  <!-- Capture the GPS fields from Smart Eye. -->
+  <capture_gps>no</capture_gps>	
+
+  <!-- Include SE analysis fields (blinks,saccades,fixations). Output must
+       also be enabled via the SEP output. Note that enabling analysis 
+       fields will introduce a processing output delay in SEP. --> 
+  <include_analysis_fields>no</include_analysis_fields>
+
+  <retransmit>
+    <address>192.168.1.147</address>
+    <port>51500</port>
+    <fields>ObjectIntersectionX,ObjectIntersectionY,ObjectIntersectionName,LeftEyelidOpening,RightEyelidOpening,EyelidOpening</fields>
+    <mode>binary</mode>
+  </retransmit>
+
+
+</root>
