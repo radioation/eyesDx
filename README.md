@@ -27,8 +27,23 @@ To use this example
 
 ### Retransmission Configuration
 
-The retransmit 
+The retransmission function can be configured using the `<retransmit>` elements in the adapter configuration file.
+```
+  <retransmit>
+    <address>127.0.0.1</address>
+    <port>51500</port>
+    <fields>ObjectIntersectionX,ObjectIntersectionY,ObjectIntersectionName</fields>
+		<sleep>10</sleep>
+    <mode>binary</mode>
+  </retransmit>
+```
+Use `<address>` and `<port>` to control where the adapter sends the data stream.
+Use `<fields>` to specify which data fields to retransmit
+Use `<sleep>` to control how long the adapter waits (in ms) if no data is present
+`<mode>` is a placeholder and not yet functional.
 
+
+### Data format
 
 
 ### Linux
