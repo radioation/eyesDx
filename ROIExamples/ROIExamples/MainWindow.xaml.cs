@@ -56,6 +56,31 @@ namespace ROIExamples
                 return data;
             }
         }
+        
+        static async Task<string> GetROIAsync(string uri, string command)
+        {
+            using (var client = new HttpClient())
+            {
+                string data = "";
+                // connect the client to the GET URL ( http://<host>:<port> )
+                client.BaseAddress = new Uri(uri);
+                client.DefaultRequestHeaders.Accept.Clear();
+
+                // GET something with    /roi   or  /roi/<roiName>  command 
+                var response = await client.GetAsync(command);
+                if (response.IsSuccessStatusCode)
+                {
+                    // we want to use the ROI XML returned from MAPPS 
+                    data = await response.Content.ReadAsStringAsync();
+                }
+                else
+                {
+                    data = "Server Error: " + response.StatusCode.ToString();
+                }
+                return data;
+            }
+        }
+
 
 
         public MainWindow()
@@ -71,7 +96,7 @@ namespace ROIExamples
 
         private async void deleteButton_Click(object sender, RoutedEventArgs e)
         {
-            // Setup URL and command.  A typical deletion  http://127.0.0.1:9495/roi  or http://127.0.0.1:9495/roi/{roiName}
+            // Setup URL and command.  The get added up to be http://127.0.0.1:9495/roi  or http://127.0.0.1:9495/roi/{roiName}
             string uri = "http://" + hostTextBox.Text + ":" + portTextBox.Text;
             string command = "/roi";
             if (deleteNameTextBox.Text.Length > 0)
@@ -89,14 +114,32 @@ namespace ROIExamples
             }
             textBlock.Inlines.Add("--------------------------------------------------\n");
             textBlock.Inlines.Add(String.Format("Do DELETE: {0}\n", uri + command));
-            // perform delete asynchronously
+            // perform DELETE asynchronously
             var task = DeleteROIAsync(uri, command);
             string result = await task;
+            // display the result
+            textBlock.Inlines.Add(result);
         }
 
-        private void getButton_Click(object sender, RoutedEventArgs e)
+        private async void getButton_Click(object sender, RoutedEventArgs e)
         {
+            // Setup URL and command.  The get added up to be http://127.0.0.1:9495/roi  or http://127.0.0.1:9495/roi/{roiName}
+            string uri = "http://" + hostTextBox.Text + ":" + portTextBox.Text;
+            string command = "/roi";
+            if (getNameTextBox.Text.Length > 0)
+            {
+                command = command + "/" + getNameTextBox.Text;
+            }
+            textBlock.Inlines.Add("--------------------------------------------------\n");
+            textBlock.Inlines.Add(String.Format("Do GET: {0}\n", uri + command));
 
+            // perform GET asynchronously
+            var task = GetROIAsync(uri, command);
+            await task;
+
+            string rois = task.Result;
+            // display the result
+            textBlock.Inlines.Add(rois);
         }
 
         private void putButton_Click(object sender, RoutedEventArgs e)
