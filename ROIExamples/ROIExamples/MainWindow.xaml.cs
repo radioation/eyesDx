@@ -81,7 +81,27 @@ namespace ROIExamples
             }
         }
 
+        static async Task PutROIAsync(string uri, string command)
+        {
+            using (var client = new HttpClient())
+            {
+                // connect the client to the PUT URL ( http://<host>:<port> )
+                client.BaseAddress = new Uri(uri);
+                client.DefaultRequestHeaders.Accept.Clear();
 
+                // PUT something with    /roi/<roiName>   or  /roi/<roiName>/frame  command 
+                HttpContent content = null;
+                var response = await client.PutAsync(command, content);
+                if (response.IsSuccessStatusCode)
+                {
+                    Console.WriteLine("Success");
+                }
+                else
+                {
+                    Console.WriteLine("Internal server Error");
+                }
+            }
+        }
 
         public MainWindow()
         {
@@ -142,9 +162,68 @@ namespace ROIExamples
             textBlock.Inlines.Add(rois);
         }
 
-        private void putButton_Click(object sender, RoutedEventArgs e)
+        private async void putButton_Click(object sender, RoutedEventArgs e)
         {
+            // setup URL
+            string uri = "http://" + hostTextBox.Text + ":" + portTextBox.Text;
 
+            // build command string based on properties.
+            string command = "/roi"; 
+
+            if (putShapeComboBox.Text == "Ellipse" || putShapeComboBox.Text == "Rectangle")
+            {
+                if (putXTextBox.Text.Length == 0 || putYTextBox.Text.Length == 0 ||
+                    putWTextBox.Text.Length == 0 || putHTextBox.Text.Length == 0 ||
+                    putNameTextBox.Text.Length == 0)
+                {
+                    MessageBox.Show("Name, X, Y, W and H must be set", "Invalid Input", MessageBoxButton.OK, MessageBoxImage.Information);
+                    return;
+                }
+
+
+                command = command + "/" + putNameTextBox.Text;
+
+                if (putDelayTextBox.Text.Length > 0)
+                    command += "/frame";
+                if( putShapeComboBox.Text == "Rectangle")
+                {
+                    command += "?shape=rectangular";
+                } else
+                {
+                    command += "?shape=ellipse";
+                }
+                command += "&x=" + putXTextBox.Text;
+                command += "&y=" + putYTextBox.Text;
+                command += "&w=" + putWTextBox.Text;
+                command += "&h=" + putHTextBox.Text;
+            }
+            else
+            {
+                if (putPointsTextBox.Text.Length == 0 ||
+                    putNameTextBox.Text.Length == 0)
+                {
+                    MessageBox.Show("Name and Points string must be set", "Invalid Input", MessageBoxButton.OK, MessageBoxImage.Information);
+                    return;
+                }
+
+                command = command + "/" + putNameTextBox.Text;
+                if (putDelayTextBox.Text.Length > 0)
+                    command += "/frame";
+                command += "?shape=points";
+                command += "&points=" + putPointsTextBox.Text;
+            }
+
+            // send a 0 if needed
+            if (putDelayTextBox.Text.Length > 0)
+            {
+                command += "&time=" + putDelayTextBox.Text;
+            }
+
+            textBlock.Inlines.Add("--------------------------------------------------\n");
+            textBlock.Inlines.Add(String.Format("Do PUT: {0}\n", uri + command));
+
+            var task = PutROIAsync(uri, command);
+            await task;
         }
 
     }
