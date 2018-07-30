@@ -11,41 +11,41 @@
         <Label x:Name="label" Content="MAPPS Server" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
         <Label x:Name="label1" Content="Address:" HorizontalAlignment="Left" Margin="10,36,0,0" VerticalAlignment="Top"/>
         <Label x:Name="label2" Content="Port:" HorizontalAlignment="Left" Margin="10,62,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="hostTextBox" HorizontalAlignment="Left" Height="23" Margin="70,39,0,0" TextWrapping="Wrap" Text="127.0.0.1" VerticalAlignment="Top" Width="120" TextChanged="hostTextBox_TextChanged"/>
+        <TextBox x:Name="hostTextBox" HorizontalAlignment="Left" Height="23" Margin="70,39,0,0" TextWrapping="Wrap" Text="127.0.0.1" VerticalAlignment="Top" Width="120"/>
         <TextBox x:Name="portTextBox" HorizontalAlignment="Left" Height="23" Margin="70,65,0,0" TextWrapping="Wrap" Text="9545" VerticalAlignment="Top" Width="120"/>
         <Label x:Name="label_Copy" Content="DELETE" HorizontalAlignment="Left" Margin="10,100,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
         <Separator HorizontalAlignment="Left" Height="23" Margin="10,88,0,0" VerticalAlignment="Top" Width="180" RenderTransformOrigin="0.502,0.049"/>
         <Label x:Name="label1_Copy" Content="Name:" HorizontalAlignment="Left" Margin="10,126,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.372,5.499"/>
-        <TextBox x:Name="deleteNameTextBox" HorizontalAlignment="Left" Height="23" Margin="70,126,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="hostTextBox_TextChanged"/>
-        <Button x:Name="deleteButton" Content="Delete ROI(s)" HorizontalAlignment="Left" Margin="70,157,0,0" VerticalAlignment="Top" Width="89"/>
+        <TextBox x:Name="deleteNameTextBox" HorizontalAlignment="Left" Height="23" Margin="70,126,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" />
+        <Button x:Name="deleteButton" Content="Delete ROI(s)" HorizontalAlignment="Left" Margin="70,157,0,0" VerticalAlignment="Top" Width="89" Click="deleteButton_Click"/>
         <Separator HorizontalAlignment="Left" Height="23" Margin="10,176,0,0" VerticalAlignment="Top" Width="180" RenderTransformOrigin="0.502,0.049"/>
         <Label x:Name="label1_Copy1" Content="Name:" HorizontalAlignment="Left" Margin="10,214,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="getNameTextBox" HorizontalAlignment="Left" Height="23" Margin="70,217,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="hostTextBox_TextChanged"/>
-        <Button x:Name="getButton" Content="Get ROI(s)" HorizontalAlignment="Left" Margin="70,245,0,0" VerticalAlignment="Top" Width="89"/>
+        <TextBox x:Name="getNameTextBox" HorizontalAlignment="Left" Height="23" Margin="70,217,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" />
+        <Button x:Name="getButton" Content="Get ROI(s)" HorizontalAlignment="Left" Margin="70,245,0,0" VerticalAlignment="Top" Width="89" Click="getButton_Click"/>
         <Label x:Name="label_Copy1" Content="GET" HorizontalAlignment="Left" Margin="10,188,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
         <Separator HorizontalAlignment="Left" Height="23" Margin="10,264,0,0" VerticalAlignment="Top" Width="180" RenderTransformOrigin="0.502,0.049"/>
         <Label x:Name="label_Copy2" Content="PUT" HorizontalAlignment="Left" Margin="9,275,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
         <Label x:Name="label1_Copy2" Content="Preset:" HorizontalAlignment="Left" Margin="10,301,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.577,4.417"/>
         <ComboBox x:Name="putPresetComboBox" HorizontalAlignment="Left" Margin="70,301,0,0" VerticalAlignment="Top" Width="120"/>
         <Label x:Name="label1_Copy3" Content="Name:" HorizontalAlignment="Left" Margin="9,327,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="putNameTextBox" HorizontalAlignment="Left" Height="23" Margin="70,328,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="hostTextBox_TextChanged"/>
+        <TextBox x:Name="putNameTextBox" HorizontalAlignment="Left" Height="23" Margin="70,328,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" />
         <Label x:Name="label1_Copy4" Content="X:" HorizontalAlignment="Left" Margin="9,355,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="putXTextBox" HorizontalAlignment="Left" Height="23" Margin="70,356,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="hostTextBox_TextChanged"/>
+        <TextBox x:Name="putXTextBox" HorizontalAlignment="Left" Height="23" Margin="70,356,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" />
         <Label x:Name="label1_Copy5" Content="Y:" HorizontalAlignment="Left" Margin="9,383,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="putYTextBox" HorizontalAlignment="Left" Height="23" Margin="70,384,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="hostTextBox_TextChanged"/>
+        <TextBox x:Name="putYTextBox" HorizontalAlignment="Left" Height="23" Margin="70,384,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" />
         <Label x:Name="label1_Copy6" Content="Width:" HorizontalAlignment="Left" Margin="9,411,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="putWTextBox" HorizontalAlignment="Left" Height="23" Margin="70,412,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="hostTextBox_TextChanged"/>
+        <TextBox x:Name="putWTextBox" HorizontalAlignment="Left" Height="23" Margin="70,412,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" />
         <Label x:Name="label1_Copy7" Content="Height:" HorizontalAlignment="Left" Margin="9,439,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="putHTextBox" HorizontalAlignment="Left" Height="23" Margin="70,440,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="hostTextBox_TextChanged"/>
+        <TextBox x:Name="putHTextBox" HorizontalAlignment="Left" Height="23" Margin="70,440,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" />
         <Label x:Name="label1_Copy8" Content="Shape:" HorizontalAlignment="Left" Margin="10,468,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.577,4.417"/>
         <ComboBox x:Name="putShapeComboBox" HorizontalAlignment="Left" Margin="70,468,0,0" VerticalAlignment="Top" Width="120"/>
         <Label x:Name="label1_Copy9" Content="Points:" HorizontalAlignment="Left" Margin="9,494,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="putPointsTextBox" HorizontalAlignment="Left" Height="86" Margin="70,495,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="hostTextBox_TextChanged"/>
+        <TextBox x:Name="putPointsTextBox" HorizontalAlignment="Left" Height="86" Margin="70,495,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" />
         <Label x:Name="label1_Copy10" Content="Delay:" HorizontalAlignment="Left" Margin="9,585,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="putDelayTextBox" HorizontalAlignment="Left" Height="23" Margin="70,586,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="hostTextBox_TextChanged"/>
+        <TextBox x:Name="putDelayTextBox" HorizontalAlignment="Left" Height="23" Margin="70,586,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" />
         <Label x:Name="label1_Copy11" Content="Screen:" HorizontalAlignment="Left" Margin="9,613,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="putScreenTextBox" HorizontalAlignment="Left" Height="23" Margin="70,614,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="hostTextBox_TextChanged"/>
-        <Button x:Name="putButton" Content="Put ROI" HorizontalAlignment="Left" Margin="70,642,0,0" VerticalAlignment="Top" Width="89" RenderTransformOrigin="-0.035,-0.5"/>
+        <TextBox x:Name="putScreenTextBox" HorizontalAlignment="Left" Height="23" Margin="70,614,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" />
+        <Button x:Name="putButton" Content="Put ROI" HorizontalAlignment="Left" Margin="70,642,0,0" VerticalAlignment="Top" Width="89" RenderTransformOrigin="-0.035,-0.5" Click="putButton_Click"/>
 
     </Grid>
 </Window>
