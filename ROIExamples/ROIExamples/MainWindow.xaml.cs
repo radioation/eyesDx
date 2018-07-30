@@ -216,7 +216,26 @@ namespace ROIExamples
             // send a 0 if needed
             if (putDelayTextBox.Text.Length > 0)
             {
-                command += "&time=" + putDelayTextBox.Text;
+                try
+                {
+                    var delay = Convert.ToDouble(putDelayTextBox.Text);
+                    if( delay == 0.0)
+                    {
+                        command += "&time=0";
+                    } else
+                    {
+                        // add delay to the current filetime
+                        var now = DateTime.Now.ToFileTimeUtc();
+                        var time = now + Convert.ToInt64(delay * 10000000);
+                        command += "&time=" + time;
+
+                    }
+                }
+                catch (FormatException)
+                {
+                    MessageBox.Show("Time must be an number", "Invalid Input", MessageBoxButton.OK, MessageBoxImage.Information);
+                    return;
+                }
             }
 
             textBlock.Inlines.Add("--------------------------------------------------\n");
