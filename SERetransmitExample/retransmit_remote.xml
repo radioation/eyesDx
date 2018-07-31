@@ -36,7 +36,7 @@
 
   <!-- Ignore the timestamps from the remote machine and use the time
        that the packet was received instead. -->
-  <force_local_timestamps>true</force_local_timestamps>
+  <force_local_timestamps>false</force_local_timestamps>
 
   <!-- UDP port that Smart Eye is transmitting data. -->
   <smarteye_udp_port>5001</smarteye_udp_port>
