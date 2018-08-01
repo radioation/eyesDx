@@ -36,7 +36,7 @@ namespace ROIExamples
         public ObservableCollection<string> shapeList = new ObservableCollection<string>();
 
         public ObservableCollection<string> presetList = new ObservableCollection<string>();
-        public string presetPath = System.IO.Path.GetTempPath() + "eyesDx_roi_presets.xml";
+        public string presetPath = System.IO.Path.GetTempPath() + "eyesDx_roi_presets.roi";
         Dictionary<string, string> presets = new Dictionary<string, string>();
 
         static async Task<string> DeleteROIAsync(string uri, string command)
@@ -126,6 +126,18 @@ namespace ROIExamples
             if (File.Exists(presetPath))
             {
                 // read in text file 
+                string line;
+                System.IO.StreamReader file =  new System.IO.StreamReader(presetPath);
+                while ((line = file.ReadLine()) != null)
+                {
+                    string [] parts = line.Split('|');
+                    if ( parts.Length == 2 )
+                    {
+                        presets[parts[0]] = parts[1];
+                        presetList.Add(parts[0]);
+                    }
+                }
+
             }
         }
 
@@ -311,14 +323,14 @@ namespace ROIExamples
 
         private void deletePresetButton_Click(object sender, RoutedEventArgs e)
         {
-            if( putPresetComboBox.SelectedIndex < 3)
+            if (putPresetComboBox.SelectedIndex < 3)
             {
                 MessageBox.Show("Cannot delete\n'rect_test', 'ellipse_test', 'shape_test'", "Invalid Preset", MessageBoxButton.OK, MessageBoxImage.Information);
                 return;
             }
 
             var name = putPresetComboBox.Text;
-            if(presets.ContainsKey(name))
+            if (presets.ContainsKey(name))
             {
                 presets.Remove(name);
                 presetList.Remove(name);
@@ -332,7 +344,7 @@ namespace ROIExamples
         {
             // defaults take priority
             var selection = (sender as ComboBox).SelectedItem as string;
-            if( selection == null)
+            if (selection == null)
             {
                 putNameTextBox.Text = "";
                 putXTextBox.Text = "";
@@ -380,7 +392,7 @@ namespace ROIExamples
             {
                 // see if presets has name 
                 if (presets.ContainsKey(selection))
-                { 
+                {
 
                     string[] values = presets[selection].Split(':');
                     putNameTextBox.Text = selection;
@@ -405,6 +417,15 @@ namespace ROIExamples
                         putScreenTextBox.Text = values[7];
                     }
                 }
+            }
+        }
+
+        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            if (presets.Count > 0)
+            {
+                // write it out
+                File.WriteAllLines(presetPath, presets.Select(x => x.Key + "|" + x.Value));
             }
         }
     }

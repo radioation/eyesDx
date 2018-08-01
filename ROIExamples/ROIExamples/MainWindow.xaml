@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ROIExamples"
         mc:Ignorable="d"
-        Title="ROI HTTP Testing Tool" Height="716" Width="846" Background="#FFD2DFE0" MinWidth="846" MinHeight="716">
+        Title="ROI HTTP Testing Tool" Height="716" Width="846" Background="#FFD2DFE0" MinWidth="846" MinHeight="716" Closing="Window_Closing">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="197*"/>
