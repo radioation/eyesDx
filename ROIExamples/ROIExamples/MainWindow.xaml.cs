@@ -238,6 +238,10 @@ namespace ROIExamples
                 }
             }
 
+            if( putScreenTextBox.Text.Length > 0)
+            {
+                command += "&screen_index=" + putScreenTextBox.Text;
+            }
             textBlock.Inlines.Add("--------------------------------------------------\n");
             textBlock.Inlines.Add(String.Format("Do PUT: {0}\n", uri + command));
 
