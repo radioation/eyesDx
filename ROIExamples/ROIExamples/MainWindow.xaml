@@ -5,53 +5,55 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ROIExamples"
         mc:Ignorable="d"
-        Title="ROI HTTP Testing Tool" Height="715.756" Width="845.74" Background="#FFD2DFE0">
+        Title="ROI HTTP Testing Tool" Height="716" Width="846" Background="#FFD2DFE0" MinWidth="846" MinHeight="716">
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="191*"/>
-            <ColumnDefinition Width="647*"/>
+            <ColumnDefinition Width="197*"/>
+            <ColumnDefinition Width="641*"/>
         </Grid.ColumnDefinitions>
-        <Label x:Name="label" Content="MAPPS Server" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
-        <Label x:Name="label1" Content="Address:" HorizontalAlignment="Left" Margin="10,36,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="label2" Content="Port:" HorizontalAlignment="Left" Margin="10,62,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label" Content="MAPPS Server" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" FontWeight="Bold" Height="26" Width="91"/>
+        <Label x:Name="label1" Content="Address:" HorizontalAlignment="Left" Margin="10,36,0,0" VerticalAlignment="Top" Height="26" Width="55"/>
+        <Label x:Name="label2" Content="Port:" HorizontalAlignment="Left" Margin="10,62,0,0" VerticalAlignment="Top" Height="26" Width="34"/>
         <TextBox x:Name="hostTextBox" HorizontalAlignment="Left" Height="23" Margin="70,39,0,0" TextWrapping="Wrap" Text="127.0.0.1" VerticalAlignment="Top" Width="120"/>
         <TextBox x:Name="portTextBox" HorizontalAlignment="Left" Height="23" Margin="70,65,0,0" TextWrapping="Wrap" Text="9545" VerticalAlignment="Top" Width="120"/>
-        <Label x:Name="label_Copy" Content="DELETE" HorizontalAlignment="Left" Margin="10,100,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+        <Label x:Name="label_Copy" Content="DELETE" HorizontalAlignment="Left" Margin="10,100,0,0" VerticalAlignment="Top" FontWeight="Bold" Height="26" Width="51"/>
         <Separator HorizontalAlignment="Left" Height="23" Margin="10,88,0,0" VerticalAlignment="Top" Width="180" RenderTransformOrigin="0.502,0.049"/>
-        <Label x:Name="label1_Copy" Content="Name:" HorizontalAlignment="Left" Margin="10,126,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.372,5.499"/>
+        <Label x:Name="label1_Copy" Content="Name:" HorizontalAlignment="Left" Margin="10,126,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.372,5.499" Height="26" Width="44"/>
         <TextBox x:Name="deleteNameTextBox" HorizontalAlignment="Left" Height="23" Margin="70,126,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" />
-        <Button x:Name="deleteButton" Content="Delete ROI(s)" HorizontalAlignment="Left" Margin="70,157,0,0" VerticalAlignment="Top" Width="89" Click="deleteButton_Click"/>
+        <Button x:Name="deleteButton" Content="Delete ROI(s)" HorizontalAlignment="Left" Margin="70,157,0,0" VerticalAlignment="Top" Width="89" Click="deleteButton_Click" Height="20"/>
         <Separator HorizontalAlignment="Left" Height="23" Margin="10,176,0,0" VerticalAlignment="Top" Width="180" RenderTransformOrigin="0.502,0.049"/>
-        <Label x:Name="label1_Copy1" Content="Name:" HorizontalAlignment="Left" Margin="10,214,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label1_Copy1" Content="Name:" HorizontalAlignment="Left" Margin="10,214,0,0" VerticalAlignment="Top" Height="26" Width="44"/>
         <TextBox x:Name="getNameTextBox" HorizontalAlignment="Left" Height="23" Margin="70,217,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" />
-        <Button x:Name="getButton" Content="Get ROI(s)" HorizontalAlignment="Left" Margin="70,245,0,0" VerticalAlignment="Top" Width="89" Click="getButton_Click"/>
-        <Label x:Name="label_Copy1" Content="GET" HorizontalAlignment="Left" Margin="10,188,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+        <Button x:Name="getButton" Content="Get ROI(s)" HorizontalAlignment="Left" Margin="70,245,0,0" VerticalAlignment="Top" Width="89" Click="getButton_Click" Height="20"/>
+        <Label x:Name="label_Copy1" Content="GET" HorizontalAlignment="Left" Margin="10,188,0,0" VerticalAlignment="Top" FontWeight="Bold" Height="26" Width="32"/>
         <Separator HorizontalAlignment="Left" Height="23" Margin="10,264,0,0" VerticalAlignment="Top" Width="180" RenderTransformOrigin="0.502,0.049"/>
-        <Label x:Name="label_Copy2" Content="PUT" HorizontalAlignment="Left" Margin="9,275,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
-        <Label x:Name="label1_Copy2" Content="Preset:" HorizontalAlignment="Left" Margin="10,301,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.577,4.417"/>
-        <ComboBox x:Name="putPresetComboBox" HorizontalAlignment="Left" Margin="70,301,0,0" VerticalAlignment="Top" Width="120"/>
-        <Label x:Name="label1_Copy3" Content="Name:" HorizontalAlignment="Left" Margin="9,327,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label_Copy2" Content="PUT" HorizontalAlignment="Left" Margin="9,275,0,0" VerticalAlignment="Top" FontWeight="Bold" Height="26" Width="33"/>
+        <Label x:Name="label1_Copy2" Content="Preset:" HorizontalAlignment="Left" Margin="10,301,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.577,4.417" Height="26" Width="45"/>
+        <ComboBox x:Name="putPresetComboBox" HorizontalAlignment="Left" Margin="70,301,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="putPresetComboBox_SelectionChanged" Height="22"/>
+        <Label x:Name="label1_Copy3" Content="Name:" HorizontalAlignment="Left" Margin="9,327,0,0" VerticalAlignment="Top" Height="26" Width="44"/>
         <TextBox x:Name="putNameTextBox" HorizontalAlignment="Left" Height="23" Margin="70,328,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" />
-        <Label x:Name="label1_Copy4" Content="X:" HorizontalAlignment="Left" Margin="9,355,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label1_Copy4" Content="X:" HorizontalAlignment="Left" Margin="9,355,0,0" VerticalAlignment="Top" Height="26" Width="20"/>
         <TextBox x:Name="putXTextBox" HorizontalAlignment="Left" Height="23" Margin="70,356,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" />
-        <Label x:Name="label1_Copy5" Content="Y:" HorizontalAlignment="Left" Margin="9,383,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label1_Copy5" Content="Y:" HorizontalAlignment="Left" Margin="9,383,0,0" VerticalAlignment="Top" Height="26" Width="19"/>
         <TextBox x:Name="putYTextBox" HorizontalAlignment="Left" Height="23" Margin="70,384,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" />
-        <Label x:Name="label1_Copy6" Content="Width:" HorizontalAlignment="Left" Margin="9,411,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label1_Copy6" Content="Width:" HorizontalAlignment="Left" Margin="9,411,0,0" VerticalAlignment="Top" Height="26" Width="45"/>
         <TextBox x:Name="putWTextBox" HorizontalAlignment="Left" Height="23" Margin="70,412,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" />
-        <Label x:Name="label1_Copy7" Content="Height:" HorizontalAlignment="Left" Margin="9,439,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label1_Copy7" Content="Height:" HorizontalAlignment="Left" Margin="9,439,0,0" VerticalAlignment="Top" Height="26" Width="48"/>
         <TextBox x:Name="putHTextBox" HorizontalAlignment="Left" Height="23" Margin="70,440,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" />
-        <Label x:Name="label1_Copy8" Content="Shape:" HorizontalAlignment="Left" Margin="10,468,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.577,4.417"/>
-        <ComboBox x:Name="putShapeComboBox" HorizontalAlignment="Left" Margin="70,468,0,0" VerticalAlignment="Top" Width="120"/>
-        <Label x:Name="label1_Copy9" Content="Points:" HorizontalAlignment="Left" Margin="9,494,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label1_Copy8" Content="Shape:" HorizontalAlignment="Left" Margin="10,468,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.577,4.417" Height="26" Width="45"/>
+        <ComboBox x:Name="putShapeComboBox" HorizontalAlignment="Left" Margin="70,468,0,0" VerticalAlignment="Top" Width="120" Height="22"/>
+        <Label x:Name="label1_Copy9" Content="Points:" HorizontalAlignment="Left" Margin="9,494,0,0" VerticalAlignment="Top" Height="26" Width="45"/>
         <TextBox x:Name="putPointsTextBox" HorizontalAlignment="Left" Height="86" Margin="70,495,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" />
-        <Label x:Name="label1_Copy10" Content="Delay:" HorizontalAlignment="Left" Margin="9,585,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label1_Copy10" Content="Delay:" HorizontalAlignment="Left" Margin="9,585,0,0" VerticalAlignment="Top" Height="26" Width="42"/>
         <TextBox x:Name="putDelayTextBox" HorizontalAlignment="Left" Height="23" Margin="70,586,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" />
-        <Label x:Name="label1_Copy11" Content="Screen:" HorizontalAlignment="Left" Margin="9,613,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label1_Copy11" Content="Screen:" HorizontalAlignment="Left" Margin="9,613,0,0" VerticalAlignment="Top" Height="26" Width="48"/>
         <TextBox x:Name="putScreenTextBox" HorizontalAlignment="Left" Height="23" Margin="70,614,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" />
-        <Button x:Name="putButton" Content="Put ROI" HorizontalAlignment="Left" Margin="70,642,0,0" VerticalAlignment="Top" Width="89" RenderTransformOrigin="-0.035,-0.5" Click="putButton_Click"/>
+        <Button x:Name="putButton" Content="Put ROI" HorizontalAlignment="Left" Margin="70,642,0,0" VerticalAlignment="Top" Width="89" RenderTransformOrigin="-0.035,-0.5" Click="putButton_Click" Height="20"/>
         <ScrollViewer Margin="10" Grid.Column="1">
             <TextBlock x:Name="textBlock" TextWrapping="Wrap" Background="White"/>
         </ScrollViewer>
+        <Button x:Name="savePresetButton" Content="Save" HorizontalAlignment="Left" Margin="70,278,0,0" VerticalAlignment="Top" Width="57" Click="savePresetButton_Click" Height="20"/>
+        <Button x:Name="deletePresetButton" Content="Delete" HorizontalAlignment="Left" Margin="133,278,0,0" VerticalAlignment="Top" Width="57" Click="deletePresetButton_Click" Height="20"/>
 
     </Grid>
 </Window>
