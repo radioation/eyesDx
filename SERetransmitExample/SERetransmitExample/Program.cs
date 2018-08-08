@@ -15,8 +15,8 @@ namespace SERetransmitExample
         static void Main(string[] args)
         {
             //Creates a UdpClient for reading incoming data.
-            UdpClient receivingUdpClient = new UdpClient(51500);  // we're listening to port 51500
-            IPEndPoint RemoteIpEndPoint = new IPEndPoint(IPAddress.Any, 0);  // any source
+            UdpClient receivingUdpClient = new UdpClient();  // we're listening to port 51500
+            IPEndPoint RemoteIpEndPoint = new IPEndPoint(IPAddress.Any, 51500);  // any source
 
             Console.WriteLine("listening for retransmitted eye tracking data. Press 'ESC' key to quit.");
             while (!(Console.KeyAvailable && Console.ReadKey(true).Key == ConsoleKey.Escape))
