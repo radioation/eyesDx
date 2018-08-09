@@ -16,6 +16,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <inttypes.h> 
+#include <unistd.h>
 #endif
 
 #define SERVER "127.0.0.1"  

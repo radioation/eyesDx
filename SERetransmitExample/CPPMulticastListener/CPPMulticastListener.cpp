@@ -15,6 +15,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <inttypes.h> 
+#include <unistd.h>
 #endif
 
 #define SERVER "234.234.234.234"  
@@ -50,7 +51,7 @@ int main()
 
 	unsigned int one = 1;
 	if (setsockopt(s, SOL_SOCKET, SO_REUSEADDR, (char *)&one, sizeof(one)) < 0) {
-		perror("Reusing ADDR failed");
+		std::cerr <<  "Reusing ADDR failed" << std::endl;
 		return -5;
 	}
 
@@ -77,7 +78,7 @@ int main()
 	mreq.imr_interface.s_addr = INADDR_ANY;
 	 
 	if (setsockopt(s, IPPROTO_IP, IP_ADD_MEMBERSHIP, (char*)&mreq, sizeof(mreq)) < 0) {
-		perror("IP_ADD_MEMBERSHIP failed");
+		std::cerr << "IP_ADD_MEMBERSHIP failed" << std::endl;
 		return -6;
 	}
 
