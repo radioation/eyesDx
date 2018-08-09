@@ -43,6 +43,22 @@ Use `<sleep>` to control how long the adapter waits (in ms) if no data is presen
 `<mode>` is a placeholder and not yet functional.
 
 
+
+#### Multicast Configuration
+Addresses in the range 224.0.0.0 through 239.255.255.255 will switch will multicast the data. The multicast.xml file has `<retransmit>` set to:
+```
+  <retransmit>
+    <address>234.234.234.234</address>
+    <port>12345</port>
+    <fields>ObjectIntersectionX,ObjectIntersectionY,ObjectIntersectionName</fields>
+    <mode>binary</mode>
+  </retransmit>
+```
+Build and run "CPPMulticastListener" or "CSMulticastListner" to listen for data over `234.234.234.234:12345`
+
+
+
+
 ### Data format
 The adapter currently sends data in binary form.  The first 8 bytes will be a Windows Filetime.   The rest of the bytes will depend on the fields selected.   Most of the data fields are 32-bit floats.  Text strings are 64-bytes long.   
 
