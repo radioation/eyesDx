@@ -73,4 +73,4 @@ results in
 * the next 64 bytes are the ObjectIntersctionName
 
 ### Linux
-The CPPListener.cpp file has been compiled and tested on Ubuntu Linux 16.04.1 with g++ version 5.4.0.  It can be compiled by typing `g++ CPPListener.cpp`.
+The CPPListener.cpp and CPPMulticastListener.cpp files been compiled and tested on Ubuntu Linux 16.04.1 with g++ version 5.4.0.  They can be compiled by typing `g++ CPPListener.cpp` or `g++ CPPMulticastListener.cpp`
