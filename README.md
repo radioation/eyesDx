@@ -1,5 +1,5 @@
 # eyesDx
-Examples for communicating with [EyesDx](http://www.eyesdx.com) software
+Examples for communicating with [EyesDx](https://www.eyesdx.com) software
 
 ## SampleNetworkSource
 This program demonstrates sending to the eyesDx network adapter with C#.
