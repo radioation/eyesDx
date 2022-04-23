@@ -29,7 +29,7 @@ int main()
 	int s = 0;
 	socklen_t alen = sizeof(address);
 	char buf[BUF_LEN];
-	char message[BUF_LEN];
+
 
 #ifdef _WIN32
 	WSADATA wsa;
