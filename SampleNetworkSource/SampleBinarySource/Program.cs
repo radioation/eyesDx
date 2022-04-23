@@ -30,7 +30,8 @@ namespace SampleBinarySource
 
                 // Add 'SomeTextField' to the network adapter message
                 string message = "Some C# Text Field";
-                int length = 64;
+                int length = 64;  
+                // Defined String64 in confiruration XML. So we need to pad it
                 string paddedMessage = message.PadRight(length).Substring(0, length);
                 Console.WriteLine("'{0}'", paddedMessage);
                 binaryWriter.Write(paddedMessage.ToCharArray());
