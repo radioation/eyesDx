@@ -57,7 +57,7 @@
     <target_rate_hz>50</target_rate_hz>
     
     <!-- Unique index, used if multiple parallel network translators are running. [0,9] -->
-    <multi_device_index>2</multi_device_index>  
+    <multi_device_index>3</multi_device_index>  
   </global>
   
   <!-- Begin an array of elements that describe the bus. -->
