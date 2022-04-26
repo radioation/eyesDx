@@ -63,8 +63,8 @@ PLUGIN_API int XPluginStart(
 	char *		outName,
 	char *		outSig,
 	char *		outDesc) {
-	strcpy(outName, "MyPlugin");
-	strcpy(outSig, "eyesdx.examples.myplugin");
+	strcpy(outName, "MAPPS");
+	strcpy(outSig, "eyesdx.examples.mapps");
 	strcpy(outDesc, "A simple plugin for use with MAPPS");
 
 
