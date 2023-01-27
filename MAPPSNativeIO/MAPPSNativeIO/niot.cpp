@@ -91,21 +91,26 @@ int main(int argc, char** argv)
 			printf("Bus [%s] has %d elements, %d frames. \n",
 				listData->Buses[i].BusName, elCnt, frameCount);
 			printf("  Runs from %I64dms to %I64dms (%I64d total milliseconds). \n",
-				timestamps[0], timestamps[frameCount - 1],
-				timestamps[frameCount - 1] - timestamps[0]);
+				timestamps[0], timestamps[size_t(frameCount) - 1],
+				timestamps[size_t(frameCount) - 1] - timestamps[0]);
 
-			//  			if (strcmp(listData->Buses[i].BusName, "et") == 0)
-			//  			{
-			//  				float* objX = elements[3].Payload.AsFloat;
-			//  				float* objY = elements[4].Payload.AsFloat;
-			//  
-			//  				for (int fr = 0; fr < frameCount; fr++)
-			//  				{
-			//  					printf("%1.3f %1.3f \n",
-			//  						objX[fr],
-			//  						objY[fr]);
-			//  				}
-			//  			}
+			if (strcmp(listData->Buses[i].BusName, "Subject_1") == 0)
+			{
+				float* objX = elements[3].Payload.AsFloat;
+				float* objY = elements[4].Payload.AsFloat;
+
+				int maxElems = 10;
+				if (maxElems > frameCount) {
+					maxElems = frameCount; 
+				}
+				for (int fr = 0; fr < maxElems; fr++)
+				{
+					printf("%s - X: %1.3f Y: %1.3f \n",
+						listData->Buses[i].BusName,
+						objX[fr],
+						objY[fr]);
+				}
+			}
 		}
 	}
 
