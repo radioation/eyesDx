@@ -23,10 +23,11 @@ namespace SampleEventSource
             // setup Event data
             string message = "None";  // default message should be 'None'
             int group = 1;
-            int flag = 0;  
+            int flag = 0;
 
             // loop until ESC
             Console.WriteLine("Sending data to Event adapter. Press 'ESC' key to quit.");
+            Console.WriteLine("   Press A, B, C, or D to change event.");
             bool done = false;
             while (!done)
             {
