@@ -29,7 +29,7 @@
   
   <!-- Ignore the timestamps from the remote machine and use the time
        that the packet was received instead. -->
-  <force_local_timestamps>true</force_local_timestamps>
+  <force_local_timestamps>false</force_local_timestamps>
 
   <!-- Mode to operate in: binary,ascii,stream,signal_stream -->
   <mode>ascii</mode>
