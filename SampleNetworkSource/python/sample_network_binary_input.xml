@@ -1,0 +1,119 @@
+<!--****************************************************************************
+    This is a predefined input source for Adapter Launcher.
+   
+    The 'Subject_1' bus listens and receives eye tracking (gaze position) data 
+    from a Tobii Glasses Translator over the network.
+   
+    For more information about the fields contained, please visit
+    http://www.eyesdx.com/client/userguide/apps/adapters/network.html.
+   
+    Documentation last updated July 21, 2018.
+*****************************************************************************-->
+
+<root>
+
+  <!-- Path where data should be cached. Note that it must be UNIQUE from all other adapters. -->
+  <log_path>C:\eDx_data\adapter_logs\</log_path>
+
+  <!-- Adapter type detection for adapter runner. -->
+  <adapter_type>network</adapter_type>
+
+  <!-- Searchable phrases for discovering this service. -->
+  <search_phrases>sample</search_phrases>
+
+  <!-- Description for this service. -->
+  <description>Sample Binary Network Stream.</description>
+
+  <!-- Export data to MAPPS in live mode (does not affect recording). -->
+  <export_to_mapps>true</export_to_mapps>
+
+  <!-- Ignore the timestamps from the remote machine and use the time
+       that the packet was received instead. -->
+  <force_local_timestamps>false</force_local_timestamps>
+
+  <!-- Mode to operate in: binary,ascii,stream,signal_stream -->
+  <mode>binary</mode>
+
+  <network>
+    <!-- ADVANCED USERS ONLY: Force a local network binding. -->
+    <local_address></local_address>
+
+    <!-- Multicast port to use (or empty if not using multicast). Applies only for
+         'binary' or 'ascii' modes. -->
+    <mc_address></mc_address>
+
+    <!-- Network port to use. -->
+    <port>23223</port>
+  </network>
+
+  <global>
+    <!-- Type of device (e.g., phyio, Eye Tracker, eeg, ...). -->
+    <device_type>Sample_Binary_Device</device_type>
+
+    <!-- Unique name of this device. -->
+    <unique_name>Sample_Binary_Bus</unique_name>
+
+    <!-- Ideal run rate, in Hz. -->
+    <target_rate_hz>50</target_rate_hz>
+
+    <!-- Unique index, used if multiple parallel network translators are running. -->
+    <multi_device_index>1</multi_device_index>
+  </global>
+
+  <!-- Begin an array of elements that describe the bus. -->
+  <bus_description>
+    <elements>
+      <element>
+        <name>SomeTextField</name>     <!-- Element name. -->
+        <type>string64</type>          <!-- Element type. -->
+      </element>
+
+      <!-- Second element. -->
+      <element>
+      	<name>AnIntegerField</name>    <!-- Element name. -->
+      	<type>int</type>               <!-- Element type. -->
+      </element>
+      
+      <!-- Third element. -->
+      <element>
+      	<name>SomeFloatField</name>    <!-- Element name. -->
+      	<type>float</type>             <!-- Element type. -->
+      </element>
+      
+      <!-- Fourth element. -->
+      <element>
+      	<name>SomeDoubleField</name>   <!-- Element name. -->
+      	<type>double</type>            <!-- Element type. -->
+      </element>
+      
+      <!-- Fifth element. -->
+      <element>
+      	<name>Some64BitIntField</name> <!-- Element name. -->
+      	<type>int64</type>             <!-- Element type. -->
+      </element>
+      
+      <!-- Array Example 1. -->
+      <element>
+      	<name>ArrayField1</name>       <!-- Element name. -->
+      	<type>int</type>               <!-- Element type. -->
+      </element>
+      
+      <!-- Array Example 2. -->
+      <element>
+      	<name>ArrayField2</name>       <!-- Element name. -->
+      	<type>int</type>               <!-- Element type. -->
+      </element>
+      
+      <!-- Array Example 3. -->
+      <element>
+      	<name>ArrayField3</name>       <!-- Element name. -->
+      	<type>int</type>               <!-- Element type. -->
+      </element>
+      
+      <!-- You may continue to add as many elements to the list as needed. -->
+      <!-- ... -->
+      
+    </elements>
+  </bus_description>
+</root>
+
